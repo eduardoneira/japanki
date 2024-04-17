@@ -2,7 +2,7 @@ from typing import List
 
 from pypdf import PdfReader
 
-from japanki.pdf.lesson import Lesson
+from .lesson import Lesson
 
 
 class Vocabulary:
