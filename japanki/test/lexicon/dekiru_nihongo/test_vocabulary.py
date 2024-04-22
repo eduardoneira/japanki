@@ -1,11 +1,6 @@
-import os
-
 import pytest
 
 from japanki.lexicon.dekiru_nihongo.vocabulary import Vocabulary
-from japanki.test import RESOURCES_DIR
-
-VOCABULARY_FILE = os.path.join(RESOURCES_DIR, 'vocabulary.pdf')
 
 
 def test_invalid_file():
@@ -13,7 +8,5 @@ def test_invalid_file():
         Vocabulary('invalid.dekiru_nihongo')
 
 
-def test_lessons():
-    vocabulary = Vocabulary(VOCABULARY_FILE)
-
-    assert len(vocabulary.lessons()) == 15
+def test_lessons(vocabulary):
+    assert vocabulary.lesson_count() == 15
