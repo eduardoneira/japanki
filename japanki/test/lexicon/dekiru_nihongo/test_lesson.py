@@ -1,5 +1,4 @@
 import pytest
-from japanki.test.lexicon.dekiru_nihongo.test_vocabulary import Vocabulary
 
 
 def test_lesson(vocabulary):

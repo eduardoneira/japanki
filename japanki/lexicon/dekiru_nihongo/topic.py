@@ -1,14 +1,17 @@
 from __future__ import annotations
 
+from typing import List
+
 
 class Topic:
 
-    def __init__(self, number, text_name: str):
+    def __init__(self, number: int, name: Name, words: List[str]):
         self.number = number
+        self.name = name
+        self._words = words
 
-        japanese, spanish = [name.strip() for name in text_name.split('\n')]
-
-        self.name = Topic.Name(spanish, japanese)
+    def words(self) -> List[str]:
+        return self._words
 
     def __hash__(self):
         return hash((self.number, self.name))
